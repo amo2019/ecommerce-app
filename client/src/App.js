@@ -15,10 +15,31 @@ import { GlobalStyle } from './global.styles';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
+import {
+  firestore
+} from './firebase/firebase.utils';
+
+// import {
+//   fetchCollectionsSuccess,
+//   fetchCollectionsFailure
+// } from './shop.actions';
+
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
     checkUserSession();
   }, [checkUserSession]);
+
+  firestore.collection('collections')
+  .onSnapshot((snap) => {
+    //debugger;
+   // console.log('snapshot...', snap.docs[0]);
+  })
+  firestore.collection('collections').get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+
+       // console.log('doc...',doc.data());
+    })
+})
 
   return (
     <div>

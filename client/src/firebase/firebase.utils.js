@@ -2,17 +2,24 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-const config = {
+var config = {
   apiKey: "AIzaSyBofWrt5wSccHDlBa-66druf_ECxOv4CaA",
   authDomain: "crown-db-6c31a.firebaseapp.com",
   databaseURL: "https://crown-db-6c31a.firebaseio.com",
   projectId: "crown-db-6c31a",
   storageBucket: "crown-db-6c31a.appspot.com",
   messagingSenderId: "954231678325",
-  appId: "1:954231678325:web:ffadc7fe4e7925a027df3c"
+  appId: "1:954231678325:web:ffadc7fe4e7925a027df3c",
+  measurementId: "G-DKEG972JYH"
 };
+ firebase.initializeApp(config);
+// const db = firebase.firestore();
+// db.collection('collections').get().then((snapshot) => {
+//   snapshot.docs.forEach(doc => {
 
-firebase.initializeApp(config);
+//       console.log(doc.data());
+//   })
+// })
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
@@ -20,8 +27,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
   const snapShot = await userRef.get();
-
   if (!snapShot.exists) {
+    
     const { displayName, email } = userAuth;
     const createdAt = new Date();
     try {
@@ -44,7 +51,6 @@ export const addCollectionAndDocuments = async (
   objectsToAdd
 ) => {
   const collectionRef = firestore.collection(collectionKey);
-
   const batch = firestore.batch();
   objectsToAdd.forEach(obj => {
     const newDocRef = collectionRef.doc();
@@ -54,10 +60,15 @@ export const addCollectionAndDocuments = async (
   return await batch.commit();
 };
 
+// db.collection('collections').get().then((snapshot) => {
+//   snapshot.docs.forEach(doc => {
+
+//       console.log(doc.data());
+//   })
+// })
 export const convertCollectionsSnapshotToMap = collections => {
   const transformedCollection = collections.docs.map(doc => {
     const { title, items } = doc.data();
-
     return {
       routeName: encodeURI(title.toLowerCase()),
       id: doc.id,
@@ -69,6 +80,7 @@ export const convertCollectionsSnapshotToMap = collections => {
   return transformedCollection.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;
+    
   }, {});
 };
 

@@ -10,9 +10,12 @@ import {
   CollectionTitle,
   CollectionItemsContainer
 } from './collection.styles';
+// import SHOP_DATA from '../../redux/shop/shop.data';
 
 const CollectionPage = ({ collection }) => {
+  
   const { title, items } = collection;
+  
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>
@@ -26,7 +29,9 @@ const CollectionPage = ({ collection }) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
+  
   collection: selectCollection(ownProps.match.params.collectionId)(state)
+  
 });
 
 export default connect(mapStateToProps)(CollectionPage);
