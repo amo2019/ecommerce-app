@@ -1,6 +1,6 @@
 # ecommerce-app
 
-##  A React based ecommerce-app using create-react-app and React-Saga.
+##  A React based ecommerce-app using create-react-app, React-Saga.
 
 ### Start App
 
