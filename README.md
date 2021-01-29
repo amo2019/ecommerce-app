@@ -1,7 +1,8 @@
-ecommerce-app
+# ecommerce-app
 
-A React based ecommerce-app using create-react-app and React-Saga.
-Start App
+##  A React based ecommerce-app using create-react-app and React-Saga.
+
+### Start App
 
 ```git
 Clone repo, install, cd into client folder and run:
