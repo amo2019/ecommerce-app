@@ -1,12 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { clearItemFromCart, removeItem } from '../../redux/cart/cart.actions';
+import React from "react";
+import { connect } from "react-redux";
+import { clearItemFromCart, removeItem } from "../../redux/cart/cart.actions";
 import {
   CartItemContainer,
   ItemDetailsContainer,
   CartItemImage,
   RemoveItemContainer,
-} from './cart-item.styles';
+} from "./cart-item.styles";
 
 const CartItem = ({ cartItem, clearItem, removeItem, item }) => {
   const { imageUrl, price, name, quantity } = item;
@@ -20,7 +20,7 @@ const CartItem = ({ cartItem, clearItem, removeItem, item }) => {
         </span>
       </ItemDetailsContainer>
       <RemoveItemContainer onClick={() => clearItem(item)}>
-        &#10005;
+        &#10060;
       </RemoveItemContainer>
     </CartItemContainer>
   );

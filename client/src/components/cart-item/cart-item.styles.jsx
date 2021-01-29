@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CartItemContainer = styled.div`
   width: 100%;
@@ -12,6 +12,8 @@ export const CartItemImage = styled.img`
 `;
 
 export const ItemDetailsContainer = styled.div`
+  font-size: 14px;
+  font-weight: bold;
   width: 70%;
   display: flex;
   flex-direction: column;

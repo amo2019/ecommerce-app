@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
   height: 70px;
@@ -8,6 +8,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 25px;
   font-weight: bold;
+  font-size: 22px;
 
   @media screen and (max-width: 800px) {
     height: 60px;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CheckoutPageContainer = styled.div`
   width: 55%;
@@ -26,10 +26,37 @@ export const CheckoutHeaderContainer = styled.div`
   border-bottom: 1px solid darkgrey;
 `;
 
+export const ClearTotalContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ToolTipContainer = styled.div`
+  .tooltiptext {
+    visibility: hidden;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px 2px;
+    margin-bottom: 1px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+`;
+
 export const HeaderBlockContainer = styled.div`
   text-transform: capitalize;
   width: 23%;
-
   &:last-child {
     width: 8%;
   }

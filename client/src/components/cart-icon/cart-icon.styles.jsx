@@ -1,6 +1,6 @@
 //import styled from 'styled-components';
-import styled, { css } from 'styled-components';
-import { ReactComponent as ShoppingIconSVG } from '../../assets/shopping-bag.svg';
+import styled, { css } from "styled-components";
+import { ReactComponent as ShoppingIconSVG } from "../../assets/shopping-bag.svg";
 
 export const CartContainer = styled.div`
   width: 45px;
@@ -24,8 +24,10 @@ const ItemCountContainer0 = css`
 const ItemCountContainer1 = css`
   color: green;
 `;
-const getCountStyles = ({ itemCount }) => {
-  return itemCount === 0 ? ItemCountContainer0 : ItemCountContainer1;
+const getCountStyles = ({ children }) => {
+  return children.props.children > 0
+    ? ItemCountContainer1
+    : ItemCountContainer0;
 };
 
 export const ItemCountContainer = styled.span`
