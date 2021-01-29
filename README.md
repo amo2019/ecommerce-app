@@ -5,15 +5,13 @@
 ### Start App
 
 ```git
-Clone repo, install, cd into client folder and run:
-
+Clone repo, cd into client folder and run:
 npm install or yarn
-npm start or yarn start
-
+```
+```git
 cd into main folder and run:
-
 npm install or yarn
-npm start or yarn start
-
+```
+```git
 last step: yarn dev
 ```
