@@ -46,9 +46,7 @@ const CheckoutPage = ({ cartItems, total, clearAllCart }) => (
     <ClearTotalContainer>
       {total ? (
         <ToolTipContainer>
-          <span class="tooltiptext">
-            Dobble Click to clear your cart, Warning: No step back after delete
-          </span>
+          <span class="tooltiptext">DOUBLE CLICK TO CLEAR CART</span>
           <CustomButton
             style={{
               marginLeft: "5px",
