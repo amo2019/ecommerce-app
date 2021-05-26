@@ -20,7 +20,7 @@ justify-items:right;
 
 export const LogoContainer = styled(Link)`
   height: 100%;
-  width: 40px;
+  width: 90%;
   padding: 25px;
 
   @media screen and (max-width: 800px) {
