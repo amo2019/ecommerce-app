@@ -1,7 +1,6 @@
 # ecommerce-app
 
-##  A React based ecommerce-app using create-react-app, React-Saga.
-#### This App belongs to one of the best courses I have attended about 2 years ago, coded step by step folowing the tutor, I built it locally, I have added different features like those in the shopping cart, Checkout component and other features like the design....
+##  A React based ecommerce-app using create-react-app, Redux-Saga.
 
 ### Start App
 
